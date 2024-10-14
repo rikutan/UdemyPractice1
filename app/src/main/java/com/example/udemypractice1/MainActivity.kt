@@ -8,6 +8,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -56,7 +57,7 @@ class MainActivity : ComponentActivity() {
                         // 名前
                         Text(
                             text = "有我陸",
-                            color = Color.Black,
+                            color = Color.Gray,
                             fontSize = 16.sp,
                             fontWeight = FontWeight.ExtraBold,
                         )
@@ -65,9 +66,30 @@ class MainActivity : ComponentActivity() {
                         // 職業
                         Text(
                             text = "職業: 将来成功する学生(自称)",
-                            color = Color.Black,
+                            color = Color.Gray,
                             fontSize = 16.sp
                         )
+                        Spacer(modifier = Modifier.height(20.dp))
+
+                        Column(
+                            horizontalAlignment = Alignment.Start,
+                            modifier = Modifier.fillMaxWidth(),
+                        ) {
+                            // 会社名
+                            Text(
+                                text = "陸株式会社",
+                                fontSize = 26.sp,
+                                fontWeight = FontWeight.Bold,
+                            )
+                            Spacer(modifier = Modifier.height(10.dp))
+
+                            // 部署グループ名
+                            Text(
+                                text = "陸丸LoveLoveカンパニー",
+                                color = Color.Gray,
+                                fontSize = 16.sp,
+                            )
+                        }
                     }
                 }
             }
@@ -101,7 +123,7 @@ fun MainPreview() {
                 // 名前
                 Text(
                     text = "有我陸",
-                    color = Color.Black,
+                    color = Color.Gray,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.ExtraBold,
                 )
@@ -110,9 +132,30 @@ fun MainPreview() {
                 // 職業
                 Text(
                     text = "職業: 将来成功する学生(自称)",
-                    color = Color.Black,
+                    color = Color.Gray,
                     fontSize = 16.sp
                 )
+                Spacer(modifier = Modifier.height(20.dp))
+
+                Column(
+                    horizontalAlignment = Alignment.Start,
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    // 会社名
+                    Text(
+                        text = "陸株式会社",
+                        fontSize = 26.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    // 部署グループ名
+                    Text(
+                        text = "陸丸LoveLoveカンパニー",
+                        color = Color.Gray,
+                        fontSize = 16.sp,
+                    )
+                }
             }
         }
     }
