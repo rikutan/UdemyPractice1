@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,6 +14,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -154,6 +159,34 @@ fun MainPreview() {
                         text = "陸丸LoveLoveカンパニー",
                         color = Color.Gray,
                         fontSize = 16.sp,
+                    )
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                    // Email
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Email,
+                            contentDescription = "email",
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Text(
+                            text = "Email",
+                            fontSize = 14.sp,
+                            fontWeight =  FontWeight.Bold
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(text = "example@gmail.com", fontSize = 16.sp)
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    // 下線を引く
+                    HorizontalDivider(
+                        modifier = Modifier.clip(RoundedCornerShape(1000.dp)),
+                        thickness = 2.dp,
                     )
                 }
             }
