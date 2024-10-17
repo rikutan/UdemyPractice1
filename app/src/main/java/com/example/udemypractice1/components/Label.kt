@@ -3,6 +3,7 @@ package com.example.udemypractice1.components
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -24,7 +25,7 @@ fun Label(icon: ImageVector, text: String, color: Color = MaterialTheme.colorSch
             imageVector = icon,
             contentDescription = null,
         )
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.width(10.dp))
 
         Text(
             text = text, color = color, fontSize = 14.sp, fontWeight = FontWeight.Bold

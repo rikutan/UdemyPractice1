@@ -30,6 +30,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -103,18 +107,21 @@ fun MainContent() {
         Spacer(modifier = Modifier.height(20.dp))
 
         // 詳細表示ボタン
+        var isShowDetail by remember { mutableStateOf(false) }
         Button(
             modifier = Modifier.fillMaxWidth(),
             //ボタンの背景色は、containerColorを使う
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xfff85f6a)),
-            onClick = {},
+            onClick = { isShowDetail = !isShowDetail },// クリックされたら、isShowDetailを反対の値の「true」に変換する。!は、否定演算子
         ) {
             Text(text = "詳細を表示", color = Color.White)
         }
         Spacer(modifier = Modifier.height(20.dp))
 
         // 趣味と居住地セクション
-        DetailSection()
+        if (isShowDetail) {
+            DetailSection()
+        }
     }
 }
 
