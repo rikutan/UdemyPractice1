@@ -5,6 +5,7 @@ import android.text.style.BackgroundColorSpan
 import android.widget.Space
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -15,7 +16,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Favorite
@@ -54,7 +57,7 @@ import kotlin.random.Random
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
+        enableEdgeToEdge()
         setContent {
             UdemyPractice1Theme {
                 Surface(
@@ -73,6 +76,7 @@ fun MainContent() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.padding(20.dp)
+            .verticalScroll(rememberScrollState())
     ) {
         // プロフィール画像
         Image(
@@ -111,7 +115,7 @@ fun MainContent() {
         Button(
             modifier = Modifier.fillMaxWidth(),
             //ボタンの背景色は、containerColorを使う
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xfff85f6a)),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2416D2)),
             onClick = { isShowDetail = !isShowDetail },// クリックされたら、isShowDetailを反対の値の「true」に変換する。!は、否定演算子
         ) {
             Text(text = "詳細を表示", color = Color.White)
