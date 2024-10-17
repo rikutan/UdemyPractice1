@@ -54,7 +54,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             UdemyPractice1Theme {
                 Surface(
-                    modifier = Modifier.fillMaxSize(), color = Color(0xff7fffff)
+                    modifier = Modifier.fillMaxSize(),
+                    color = Color(0xff7fffff)
                 ) {
                     MainContent()
                 }
@@ -97,14 +98,16 @@ fun MainContent() {
         )
         Spacer(modifier = Modifier.height(20.dp))
 
+        // 会社情報
         CompanySection()
         Spacer(modifier = Modifier.height(20.dp))
 
         // 詳細表示ボタン
         Button(
-            modifier = Modifier.fillMaxWidth(), onClick = {},
+            modifier = Modifier.fillMaxWidth(),
             //ボタンの背景色は、containerColorを使う
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xfff85f6a))
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xfff85f6a)),
+            onClick = {},
         ) {
             Text(text = "詳細を表示", color = Color.White)
         }
@@ -112,5 +115,18 @@ fun MainContent() {
 
         // 趣味と居住地セクション
         DetailSection()
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MainPreview() {
+    UdemyPractice1Theme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = Color(0xff7fffff)
+        ) {
+            MainContent()
+        }
     }
 }
