@@ -80,7 +80,7 @@ fun MainContent() {
     ) {
         // プロフィール画像
         Image(
-            painter = painterResource(id = R.drawable.start_ruri),
+            painter = painterResource(id = R.drawable.profileimage),
             contentDescription = "プロフィール",
             contentScale = ContentScale.Crop,
             modifier = Modifier
